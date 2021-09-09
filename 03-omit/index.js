@@ -13,7 +13,7 @@ export const omit = (obj, ...fields) => {
 	} else {
 		for (let element in obj) {
 			for (let argument of fields) {
-				if (element.includes(argument) == false) {
+				if (element != argument) {
 					newObj[element] = obj[element]
 				} else {
 					newObj = {}
