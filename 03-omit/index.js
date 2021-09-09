@@ -6,4 +6,20 @@
  */
 export const omit = (obj, ...fields) => {
 
+	let newObj = {};
+
+	if (fields == undefined) {
+		return newObj
+	} else {
+		for (let element in obj) {
+			for (let argument of fields) {
+				if (element.includes(argument) == false) {
+					newObj[element] = obj[element]
+				} else {
+					newObj = {}
+				}
+			}
+		}
+		return newObj
+	}
 };
