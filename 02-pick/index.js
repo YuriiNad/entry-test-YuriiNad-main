@@ -6,4 +6,18 @@
  */
 export const pick = (obj, ...fields) => {
 
+	let newObj = {};
+
+	if (fields == undefined) {
+		return newObj
+	} else {
+		for (let element in obj) {
+			for (let argument of fields) {
+				if (argument == element) {
+					newObj[element] = obj[element]
+				}
+			}
+		}
+		return newObj
+	}
 };
